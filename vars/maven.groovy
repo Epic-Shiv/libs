@@ -2,10 +2,10 @@ def checkFile() {
     try {
         File file = new File("${WORKSPACE}/pom.xml");
         FileReader fr = new FileReader(file);
-        def v = true
+        def v = true;
     }
     catch(FileNotFoundException ex) {
-        def v = false
+        def v = false;
     }
 }
 def buildArtifact() {
