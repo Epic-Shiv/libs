@@ -35,7 +35,7 @@ pipeline {
         stage('Pushing Image to Repo') {
             steps {
                 script {
-                    docker.pushImage(imageName:$"{REPOSITORY_TAG}")
+                    docker.pushImage(imageName:"${REPOSITORY_TAG}")
                 }
             }
         }
