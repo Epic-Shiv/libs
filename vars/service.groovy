@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // You must set the following environment variables
-        SERVICE_NAME = fleetman-webapp
+        SERVICE_NAME = "fleetman-webapp"
         // ORGANIZATION_NAME
         // DOCKERHUB_USERNAME (it doesn't matter if you don't have one)
 
