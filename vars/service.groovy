@@ -8,7 +8,7 @@ def call() {
         stages {
             stage('Building Artifacts') {
                 steps {
-                    cleanWs()
+                    sh 'echo building artifacts'
                 }
             }
             stage('Building Image') {
