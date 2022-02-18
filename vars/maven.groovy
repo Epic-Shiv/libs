@@ -2,15 +2,15 @@ def checkFile() {
     try {
         File file = new File("${WORKSPACE}/pom.xml");
         FileReader fr = new FileReader(file);
-        Boolean fileExist == true
+        Boolean flag == true
     }
     catch(FileNotFoundException ex) {
-        Boolean fileExist == false
+        Boolean flag == false
     }
 }
 def buildArtifact() {
     checkFile()
-    if (fileExist == TRUE) {
+    if (flag == true) {
         sh 'mvn clean build'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
@@ -18,7 +18,7 @@ def buildArtifact() {
 }
 def packageArtifact() {
     checkFile()
-    if (fileExist == TRUE) {
+    if (flag == true) {
         sh 'mvn clean package'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
@@ -26,7 +26,7 @@ def packageArtifact() {
 }
 def installArtifact() {
     checkFile()
-    if (fileExist == TRUE) {
+    if (flag == true) {
         sh 'mvn clean install'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
