@@ -13,17 +13,23 @@ def call() {
             }
             stage('Building Image') {
                 steps {
-                    docker.build();
+                    script {
+                        docker.build();
+                    }
                 }
             }
             stage('Pushing Image') {
                 steps {
-                    docker.push();
+                    script {
+                        docker.push();
+                    }
                 }
             }
             stage('Deploying') {
                 steps {
-                    deploy.cluster();
+                    script {
+                        deploy.cluster();
+                    }
                 }
             }
         }
