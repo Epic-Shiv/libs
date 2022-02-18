@@ -16,14 +16,14 @@ def call() {
             stage('Building Image') {
                 steps {
                     script {
-                        dockerImage.build imageName: String.valueOf(REPOSITORY_TAG)
+                        dockerImage.build(imageName:"${REPOSITORY_TAG}")
                     }
                 }
             }
             stage('Pushing Image') {
                 steps {
                     script {
-                        dockerImage.push imageName: String.valueOf(REPOSITORY_TAG)
+                        dockerImage.push(imageName:"${REPOSITORY_TAG}")
                     }
                 }
             }
