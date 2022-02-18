@@ -5,12 +5,12 @@ def checkFile() {
         Boolean flag = true
     }
     catch(FileNotFoundException ex) {
-        Boolean flag = false
+        Boolean flag=false
     }
 }
 def buildArtifact() {
     checkFile()
-    if ( $flag = true) {
+    if ( flag=true) {
         sh 'mvn clean build'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
@@ -18,7 +18,7 @@ def buildArtifact() {
 }
 def packageArtifact() {
     checkFile()
-    if ($flag = true) {
+    if (flag=true) {
         sh 'mvn clean package'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
@@ -26,7 +26,7 @@ def packageArtifact() {
 }
 def installArtifact() {
     checkFile()
-    if ($flag = true) {
+    if (flag=true) {
         sh 'mvn clean install'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
