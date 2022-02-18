@@ -23,7 +23,7 @@ def call() {
             stage('Pushing Image') {
                 steps {
                     script {
-                        dockerImage.push(imageName:"${REPOSITORY_TAG}")
+                        dockerImage.push imageName: "${REPOSITORY_TAG}"
                     }
                 }
             }
