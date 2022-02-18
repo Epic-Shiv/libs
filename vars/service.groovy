@@ -12,14 +12,9 @@ pipeline {
     }
 
     stages {
-        stage('Preparation') {
-            steps {
-                cleanWs()
-                git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
-            }
-        }
         stage('Building Artifact') {
             steps {
+                cleanWs()
                 sh 'echo no build required'
             }
         }
@@ -27,7 +22,7 @@ pipeline {
         stage('Building Docker Image') {
             steps {
                 script {
-                    docker.buildImage(imageName:"${REPOSITORY_TAG}")
+                    docker.buildImage()
                 }
             }
         }
@@ -35,7 +30,7 @@ pipeline {
         stage('Pushing Image to Repo') {
             steps {
                 script {
-                    docker.pushImage(imageName:"${REPOSITORY_TAG}")
+                    docker.pushImage()
                 }
             }
         }
