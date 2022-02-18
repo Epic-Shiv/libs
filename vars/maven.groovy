@@ -10,7 +10,7 @@ def checkFile() {
 }
 def buildArtifact() {
     checkFile()
-    if (flag  true) {
+    if (flag = true) {
         sh 'mvn clean build'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
