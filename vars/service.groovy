@@ -8,7 +8,7 @@ def call() {
         stages {
             stage('Building Artifacts') {
                 steps {
-                    if(fileExists 'pom.xml') {
+                    if(fileExists "pom.xml") {
                         script {
                             mavenBuild()
                         }
