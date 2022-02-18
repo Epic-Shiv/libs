@@ -14,21 +14,21 @@ def call() {
             stage('Building Image') {
                 steps {
                     script {
-                        docker.build();
+                        docker.build()
                     }
                 }
             }
             stage('Pushing Image') {
                 steps {
                     script {
-                        docker.push();
+                        docker.push()
                     }
                 }
             }
             stage('Deploying') {
                 steps {
                     script {
-                        deploy.cluster();
+                        deploy.cluster()
                     }
                 }
             }
