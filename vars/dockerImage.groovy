@@ -1,4 +1,4 @@
-def build(Map config) {
+def build(Map config = [:]) {
     try {
         File file = new File("${WORKSPACE}/Dockerfile");
         FileReader fr = new FileReader(file);
@@ -8,7 +8,7 @@ def build(Map config) {
         sh 'echo "Dockerfile not found, skipping to next step."'
     }
 }
-def push(Map config) {
+def push(Map config = [:]) {
     try {
         File file = new File("${WORKSPACE}/Dockerfile");
         FileReader fr = new FileReader(file);
