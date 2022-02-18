@@ -9,7 +9,7 @@ def checkFile() {
     }
 }
 def buildArtifact() {
-    checkFile()
+    checkFile();
     if( v = true) {
         sh 'mvn clean build'
     } else {
@@ -17,7 +17,7 @@ def buildArtifact() {
     }
 }
 def packageArtifact() {
-    checkFile()
+    checkFile();
     if(v = true) {
         sh 'mvn clean package'
     } else {
@@ -25,7 +25,7 @@ def packageArtifact() {
     }
 }
 def installArtifact() {
-    checkFile()
+    checkFile();
     if(v = true) {
         sh 'mvn clean install'
     } else {
