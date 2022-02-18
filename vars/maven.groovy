@@ -10,7 +10,7 @@ def checkFile() {
 }
 def buildArtifact() {
     checkFile()
-    if ( v = true) {
+    if( v = true) {
         sh 'mvn clean build'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
@@ -18,7 +18,7 @@ def buildArtifact() {
 }
 def packageArtifact() {
     checkFile()
-    if (v = true) {
+    if(v = true) {
         sh 'mvn clean package'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
@@ -26,7 +26,7 @@ def packageArtifact() {
 }
 def installArtifact() {
     checkFile()
-    if (v = true) {
+    if(v = true) {
         sh 'mvn clean install'
     } else {
         sh 'echo "pom.xml file not found, skipping to next step."'
