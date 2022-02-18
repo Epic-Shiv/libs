@@ -1,6 +1,6 @@
-def buildImage() {
+def build() {
     sh 'docker image build -t ${REPOSITORY_TAG} .'
 }
-def pushImage() {
+def image() {
     sh 'docker push ${REPOSITORY_TAG}'
 }
