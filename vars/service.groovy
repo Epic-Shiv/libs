@@ -9,28 +9,28 @@ def call() {
             stage('Building Artifacts') {
                 steps {
                     script {
-                        maven.packageArtifact()
+                        mavenBuild();
                     }
                 }
             }
             stage('Building Image') {
                 steps {
                     script {
-                        dockerImage.build()
+                        dockerImage.build();
                     }
                 }
             }
             stage('Pushing Image') {
                 steps {
                     script {
-                        dockerImage.push()
+                        dockerImage.push();
                     }
                 }
             }
             stage('Deploying') {
                 steps {
                     script {
-                        deploy.cluster()
+                        deployToCluster();
                     }
                 }
             }
