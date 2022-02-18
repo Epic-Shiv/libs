@@ -1,2 +1,2 @@
-# libs
+# Libs
 Contains shared libraries
