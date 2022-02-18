@@ -21,9 +21,7 @@ pipeline {
 
         stage('Building Docker Image') {
             steps {
-                script {
-                    docker.buildImage()
-                }
+                docker image build -t ${REPOSITORY_TAG} .
             }
         }
 
