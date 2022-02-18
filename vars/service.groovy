@@ -2,7 +2,10 @@ def call() {
     pipeline {
         agent any
         environment {
-            SERVICE_NAME = "fleetman-webapp"
+            script {
+                SERVICE_NAME = repoName()
+            }
+
             REPOSITORY_TAG = "${REPO_USERNAME}/${SERVICE_NAME}:${BUILD_ID}"
         }
         stages {
