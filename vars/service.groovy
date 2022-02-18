@@ -27,7 +27,7 @@ pipeline {
         stage('Building Docker Image') {
             steps {
                 script {
-                    docker.buildImage(imageName:${REPOSITORY_TAG})
+                    docker.buildImage(imageName:"${REPOSITORY_TAG}")
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
         stage('Pushing Image to Repo') {
             steps {
                 script {
-                    docker.pushImage(imageName:${REPOSITORY_TAG})
+                    docker.pushImage(imageName:$"{REPOSITORY_TAG}")
                 }
             }
         }
