@@ -1,3 +1,4 @@
+def call() {
 pipeline {
     agent any
 
@@ -19,9 +20,7 @@ pipeline {
         }
         stage('Building Artifact') {
             steps {
-                script {
-                    maven.packageArtifact()
-                }
+                sh 'echo no build required'
             }
         }
 
@@ -49,4 +48,5 @@ pipeline {
             }
         }
     }
+}
 }
