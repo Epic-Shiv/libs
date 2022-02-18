@@ -1,6 +1,6 @@
-def build() {
-    sh 'docker image build -t ${REPOSITORY_TAG} .'
+def build(Map config = [:]) {
+    sh 'docker image build -t ${config.imageName} .'
 }
-def push() {
-    sh 'docker push ${REPOSITORY_TAG}'
+def push(Map config = [:]) {
+    sh 'docker push ${config.imageName}'
 }
