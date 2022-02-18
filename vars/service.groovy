@@ -9,14 +9,7 @@ def call() {
             stage('Building Artifacts') {
                 steps {
                     script {
-                        try {
-                            File file = new File("${WORKSPACE}/pom.xml");
-                            FileReader fr = new FileReader(file);
-                            maven.packageArtifact()
-                        }
-                        catch(FileNotFoundException ex) {
-                            sh 'echo file not found'
-                        }
+                        maven.packageArtifact()
                     }
                 }
             }
