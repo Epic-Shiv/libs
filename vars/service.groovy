@@ -8,14 +8,9 @@ def call() {
         stages {
             stage('Building Artifacts') {
                 steps {
-                    if(fileExists pom.xml) {
-                        script {
-                            mavenBuild()
-                        }
-                    } else {
-                        sh 'echo "pom.xml file not found, skipping to next step."'
+                    script {
+                        mavenBuild()
                     }
-
                 }
             }
             stage('Building Image') {
