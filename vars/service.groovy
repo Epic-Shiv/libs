@@ -20,9 +20,9 @@ pipeline {
         }
         stage('Building Artifact') {
             steps {
-                script {
-                    maven.packageArtifact()
-                }
+               // script {
+               //     maven.packageArtifact()
+               // }
             }
         }
 
