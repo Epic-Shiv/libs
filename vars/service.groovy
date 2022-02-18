@@ -16,7 +16,7 @@ def call() {
             stage('Building Image') {
                 steps {
                     script {
-                        dockerImageBuild(imageName:"${REPOSITORY_TAG}")
+                        dockerImage.build(imageName:"${REPOSITORY_TAG}")
                     }
                 }
             }
