@@ -5,6 +5,6 @@ def call() {
         sh 'mvn clean package'
     }
     catch(FileNotFoundException ex) {
-        sh 'echo "pom.xml file not found, skipping to next step."'
+        sh 'echo "pom.xml file not found, skipping to next step. ${WORKSPACE}"'
     }
 }
